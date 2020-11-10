@@ -1,4 +1,4 @@
-version: "3"
+version: "3.7"
 
 
 services: 
@@ -52,13 +52,16 @@ services:
     frontend:
         build: 
             context: ./frontend
-            dockerfile: Dockerfile
+            dockerfile: Dockerfile.dev     # Change the Dockerfile which should be used for production and development
         ports: 
             - 8080:8080
-        # volumes: 
-        #     - ./frontend:/app:rw
+        # volumes:
+        #     - ~/.composer-docker/cache:/root/.composer/cache:delegated
+        #     - ./frontend:/app:cached
+        volumes: 
+            - ./frontend:/app:rw               # This volumes is used in the development stage
         depends_on: 
             - backend
         restart: on-failure
-        # environment: 
-        #     - CHOKIDAR_USEPOLLING=true
+        environment: 
+            - CHOKIDAR_USEPOLLING=true
