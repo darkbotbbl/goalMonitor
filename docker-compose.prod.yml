@@ -7,11 +7,9 @@ services:
         build: 
             context: .
             dockerfile: ./nginx/Dockerfile
-        container_name: gmonitor_nginx_dev 
         restart: on-failure
         volumes: 
             - ./nginx/nginx.conf:/etc/nginx/nginx.conf
-            - static_volume:/backend/project/staticfiles
         ports: 
             - 80:80
         depends_on: 
@@ -23,8 +21,7 @@ services:
     backend:
         build: 
             context: ./backend
-            dockerfile: Dockerfile
-        container_name: gmonitor_backend_dev
+            dockerfile: Dockerfile.prod
         hostname: backend
         ports: 
             - 8000:8000
@@ -32,20 +29,17 @@ services:
             - ./backend:/backend/project:rw
         depends_on: 
             - db
-        env_file: ./.env.dev
+        env_file: ./.env.prod
         command: >
             sh -c "python manage.py makemigrations && 
                     python manage.py migrate && 
-                    python manage.py runserver 0.0.0.0:8000"
+                    gunicorn goalMonitor.wsgi -b 0.0.0.0:8000"
 
     db:
         image: postgres:latest
-        container_name: gmonitor_db_dev
         hostname: db
-        environment:
-            POSTGRES_USER: "gabriel"
-            POSTGRES_DB: "goalMonitor_db"
-            POSTGRES_PASSWORD: "(pass)[1234]"
+        env_file:
+            - ./.env.db.prod
         volumes:
             - postgres_data:/var/lib/postgresql/data/
         ports:
@@ -53,26 +47,23 @@ services:
 
     redis:
         image: redis:latest
-        container_name: gmonitor_redis_dev
         hostname: redis
         ports: 
             - 6379
 
+        
     frontend:
         build: 
             context: ./frontend
-            dockerfile: Dockerfile.dev
-        container_name: gmonitor_frontend_dev
+            dockerfile: Dockerfile.prod
         ports: 
             - 8080:8080
-        volumes: 
-            - ./frontend:/app:rw               # This volumes is used in the development stage
         depends_on: 
             - backend
         restart: on-failure
         environment: 
             - CHOKIDAR_USEPOLLING=true
 
+
 volumes:
     postgres_data:
-    static_volume:

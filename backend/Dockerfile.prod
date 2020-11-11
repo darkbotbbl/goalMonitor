@@ -4,15 +4,22 @@ FROM python:3.8.6-slim-buster
 ENV PYTHONUNBUFFERED 1
 ENV PYTHONDONTWRITEBYTECODE 1
 
-# Create server directory
-RUN mkdir -p /backend/project
+# Create the directory for the user
+RUN mkdir -p /backend
 
-WORKDIR /backend/project
+# Create the user
+RUN useradd -ms /bin/bash gmuser
+
+# Create the appropriate directories
+ENV HOME=/backend
+ENV APP_HOME=/backend/project
+RUN mkdir $APP_HOME
+WORKDIR $APP_HOME
 
 # Install the dependencies
 RUN pip install --upgrade pip
 
-COPY requirements.txt /backend/project
+COPY requirements.txt $APP_HOME
 
 RUN pip install -r requirements.txt
 
@@ -22,10 +29,17 @@ RUN apt-get update && apt-get install -y netcat
 ADD . .
 
 # Copy the entrypoint
-COPY entrypoint.sh /backend/project
+COPY entrypoint.prod.sh $APP_HOME
+
 
 # Bundle the source
-COPY . /backend/project
+COPY . $APP_HOME
+
+# chown all the files to the app user
+RUN chown -R gmuser:gmuser $APP_HOME
+
+# change to the app user
+USER gmuser
 
 EXPOSE 8000
 
