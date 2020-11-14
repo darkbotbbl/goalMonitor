@@ -3,14 +3,14 @@ FROM node:lts-alpine as develop-stage
 
 WORKDIR /app
 
-COPY package*.json ./
+# start app
+CMD ["npm", "run", "serve"]
 
+# install the dependencies
+COPY package*.json ./
 RUN npm install
 
 # add /app/node_modules/.bin to $PATH
 ENV PATH /app/node_modules/.bin:$PATH
 
 COPY . .
-
-# start app
-CMD ["npm", "run", "serve"]
