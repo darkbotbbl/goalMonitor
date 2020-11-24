@@ -8,6 +8,11 @@ CMD ["npm", "run", "serve"]
 
 # install the dependencies
 COPY package*.json ./
+
+# RUN rm ./package-lock.json
+# RUN rm -r ./node_modules
+RUN npm cache clear --force
+
 RUN npm install
 
 # add /app/node_modules/.bin to $PATH

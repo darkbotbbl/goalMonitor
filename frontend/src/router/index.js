@@ -10,6 +10,11 @@ const routes = [
         name: 'Home',
         component: HomePage,
     },
+    {
+        path: '/goal/daily',
+        name: 'DailyGoal',
+        component: () => import('../views/goals/daily/DailyGoal.vue')
+    },
     // {
         // path: '/about',
         // name: 'About',
