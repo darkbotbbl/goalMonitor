@@ -30,6 +30,7 @@ INSTALLED_APPS = [
 
     # developer installed applications
     'accounts.apps.AccountsConfig',
+    'goals.apps.GoalsConfig',
 ]
 
 MIDDLEWARE = [
