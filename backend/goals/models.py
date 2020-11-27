@@ -65,19 +65,19 @@ class WeeklyGoal(Goal):
 
 class MonthlyGoal(Goal):
     """
-        This model will be used to create only weekly goals
+        This model will be used to create only monthly goals
     """
     parent_goal = models.ForeignKey(
-        "QuartelyGoal", 
+        "QuarterlyGoal", 
         blank=True,
         null=True,
         on_delete=models.SET_NULL
     )
 
 
-class QuartelyGoal(Goal):
+class QuarterlyGoal(Goal):
     """
-        This model will be used to create only weekly goals
+        This model will be used to create only quarterly goals
     """
     parent_goal = models.ForeignKey(
         "YearlyGoal", 
@@ -89,6 +89,6 @@ class QuartelyGoal(Goal):
 
 class YearlyGoal(Goal):
     """
-        This model will be used to create only weekly goals
+        This model will be used to create only yearly goals
     """
     pass
