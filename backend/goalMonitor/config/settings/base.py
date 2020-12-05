@@ -27,8 +27,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+	'django.contrib.sites',
 
-    # developer installed applications
+    # 3rd party apps
+    'rest_framework',
+	'rest_framework.authtoken',
+	'rest_auth',
+	'rest_auth.registration',
+	'allauth',
+	'allauth.account',
+	'allauth.socialaccount',
+
+    # local apps
     'accounts.apps.AccountsConfig',
     'goals.apps.GoalsConfig',
 ]
@@ -120,8 +130,6 @@ STATICFILES_DIR = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
 STATICFILES_FINDER = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
@@ -129,3 +137,15 @@ STATICFILES_FINDER = [
 
 # CUSTOM USER MODEL
 AUTH_USER_MODEL = "accounts.Account"
+
+
+SITE_ID = 1
+
+
+# REST FRAMEWORK CONFIGURATION
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication'
+    ]
+}

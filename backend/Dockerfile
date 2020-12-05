@@ -9,6 +9,11 @@ RUN mkdir -p /backend/project
 
 WORKDIR /backend/project
 
+# Install netcat
+RUN apt-get update && apt-get install -y netcat 
+
+ADD . .
+
 # Install the dependencies
 RUN pip install --upgrade pip
 
@@ -16,10 +21,6 @@ COPY requirements.txt /backend/project
 
 RUN pip install -r requirements.txt
 
-# Install netcat
-RUN apt-get update && apt-get install -y netcat 
-
-ADD . .
 
 # Copy the entrypoint
 COPY entrypoint.sh /backend/project
