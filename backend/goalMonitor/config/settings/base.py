@@ -4,6 +4,7 @@ Django settings for goalMonitor project.
 
 from pathlib import Path
 import os
+from corsheaders.defaults import default_headers
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent.parent
@@ -155,9 +156,20 @@ REST_FRAMEWORK = {
 
 # CORS AND CSRF CONFIGURATION
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:8000'
+    'http://localhost:8080'
 ]
 
+CORS_ALLOW_HEADERS = list(default_headers) + [
+    'Access-Control-Allow-Origin',
+]
+
+CORS_EXPOSE_HEADERS = [
+    'Access-Control-Allow-Origin',
+]
+
+# CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
 CSRF_TRUSTED_ORIGINS = [
-    'localhost:8000',
+    'localhost:8080',
+    '127.0.0.1:8080',
 ]

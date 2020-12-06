@@ -6,7 +6,7 @@ import auth from './modules/auth'
 // make vue use Vuex
 Vue.use(Vuex);
 
-export default Vuex.Store({
+export default new Vuex.Store({
     modules: {
         auth,
     },
