@@ -19,12 +19,14 @@ const actions = {
         await axios.post("api/v1/rest-auth/registration/", form);
         let UserLoginForm = new FormData();
         UserLoginForm.append("username", form.username)
-        UserLoginForm.append("password", form.password)
+        UserLoginForm.append("password", form.password1)
         await dispatch("Login", UserLoginForm)
     },
-    async Login({commit}, UserLoginForm) {
-        await axios.post("api/v1/rest-auth/login/", UserLoginForm)
-        await commit("SET_USER", UserLoginForm.username)
+    async Login({commit}, form) {
+        console.log(form)
+        await axios.post("api/v1/rest-auth/login/", form)
+        await commit("SET_USER", form.username)
+        // make a call to the api to get user data and add it to the state
     }
 }
 

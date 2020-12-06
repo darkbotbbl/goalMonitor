@@ -148,11 +148,12 @@ SITE_ID = 1
 # REST FRAMEWORK CONFIGURATION
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.SessionAuthentication',
+        # 'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.TokenAuthentication'
     ]
 }
 
+REST_SESSION_LOGIN = False
 
 # CORS AND CSRF CONFIGURATION
 CORS_ALLOWED_ORIGINS = [
@@ -173,3 +174,6 @@ CSRF_TRUSTED_ORIGINS = [
     'localhost:8080',
     '127.0.0.1:8080',
 ]
+
+
+ACCOUNT_EMAIL_VERIFICATION = "none" # change this if you need the user to verify their email before login

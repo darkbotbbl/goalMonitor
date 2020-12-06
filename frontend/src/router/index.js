@@ -15,14 +15,21 @@ const routes = [
         name: 'DailyGoal',
         component: () => import('../views/goals/daily/DailyGoal.vue')
     },
-    // {
-        // path: '/about',
-        // name: 'About',
-        // route level code-splitting
-        // this generates a separate chunk (about.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
-       // component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-    // },
+    {
+        path: '/user/profile',
+        name: 'UserProfile',
+        component: () => import('../views/profile/UserProfile.vue')
+    },
+    {
+        path: '/user/account/login',
+        name: 'Login',
+        component: () => import('../views/authentication/Login.vue')
+    },
+    {
+        path: '/user/account/signup',
+        name: 'Signup',
+        component: () => import('../views/authentication/Signup.vue')
+    }
 ]
 
 const router = new VueRouter({
