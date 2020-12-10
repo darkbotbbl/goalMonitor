@@ -5,7 +5,9 @@ const state = {
 }
 
 const getters = {
-
+    getUsername(state) {
+        return state.username
+    }
 }
 
 const mutations = {
@@ -24,7 +26,8 @@ const actions = {
     },
     async Login({commit}, form) {
         console.log(form)
-        await axios.post("api/v1/rest-auth/login/", form)
+        let response = await axios.post("api/v1/rest-auth/login/", form)
+        console.log(response)
         await commit("SET_USER", form.username)
         // make a call to the api to get user data and add it to the state
     }

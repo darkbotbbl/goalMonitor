@@ -67,8 +67,9 @@ services:
             - 8080:8080
         volumes: 
             - ./frontend:/app:rw               # This volumes is used in the development stage
-        depends_on: 
-            - backend
+        # TODO - REMOVE THE COMMENTS BELOW WHEN YOU ARE WORKING ON THE FULL STACK
+        # depends_on: 
+        #     - backend
         restart: on-failure
         environment: 
             - CHOKIDAR_USEPOLLING=true
