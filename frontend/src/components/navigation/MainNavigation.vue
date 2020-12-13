@@ -32,9 +32,7 @@
 				<li v-for="item in menu_items" :key="item.tile">
 					<a href="#">
 						<div class="m-icon" :style="{backgroundColor: item.color}">
-							<v-if checkboxValue>
-								<font-awesome-icon :icon="item.icon" />
-							</v-if>
+							<font-awesome-icon :icon="item.icon" />
 						</div> <span>{{ item.title }}</span>
 					</a>
 				</li>
@@ -42,13 +40,7 @@
 					<a href="#" class="nav-cta-btn">Login</a>
 				</li>
 			</ul>
-
 		</nav>
-
-		<section>
-			
-		</section>
-
 	</div>
 </template>
 
@@ -97,9 +89,6 @@ export default {
 	components: {
 		
 	},
-	computed: {
-
-	},
 }
 
 </script>
@@ -124,10 +113,10 @@ nav label.logo{
 }
 
 .logo-color-deep{
-	color: #FC466B;
+	color: var(--accent-color-1);
 }
 .logo-color-light{
-	color: #f1859a
+	color: var(--accent-color-2)
 }
 
 nav label.logo .mobile-logo {
@@ -158,9 +147,8 @@ nav ul.main-nav li a {
 }
 
 nav ul.main-nav li a:hover {
-	text-decoration: underline #f1859a;
-	text-decoration-thickness: 3px;
-	/** TODO - find a way to put a space between the text and the underline  */
+	border-bottom: 3px solid var(--accent-color-2);
+	padding-bottom: 2px;
 }
 
 /** check button used to toggle */
@@ -171,7 +159,7 @@ label.checkbtn {
 	margin-right: 1.8em;
 	cursor: pointer;
 	display: none;
-	color: #FC466B;
+	color: var(--accent-color-1);
 }
 
 #check {
@@ -192,11 +180,11 @@ nav ul.cta-nav li a {
 
 .nav-cta-btn {
 	padding: 10px;
-	border: 1px solid #f1859a;
+	border: 1px solid var(--accent-color-2);
 }
 
 .nav-cta-btn:hover {
-	background: linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%);
+	background: linear-gradient(90deg, var(--accent-color-1) 0%, #3F5EFB 100%);
 	color: white;
 }
 
@@ -211,9 +199,9 @@ nav ul.main-nav li.nav-cta-login-link {
 
 
 /**  Mobile nav */
-@media screen and (max-width: 865px) {
+@media screen and (max-width: 891px) {
 	nav ul.main-nav li a:hover {
-		text-decoration: none;
+		border-bottom: none;
 	}
 
 
@@ -254,7 +242,7 @@ nav ul.main-nav li.nav-cta-login-link {
 		box-shadow: 0px 5px 2px 0  #b3b9b9;
 		border-bottom-right-radius: 5px;
 		border-bottom-left-radius: 5px;
-		border-top: 4px inset #f1859a;
+		border-top: 4px inset var(--accent-color-2);
 	}
 
 	nav ul.main-nav li {
