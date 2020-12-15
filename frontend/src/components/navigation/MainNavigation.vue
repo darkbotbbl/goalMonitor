@@ -11,6 +11,7 @@
 					<span class="logo-color-deep">g</span><span class="logo-color-light">M</span>
 				</span>
 			</label>
+			
 			<ul class="cta-nav">
 				<li class="nav-cta-login-link">
 					<a href="#" class="nav-cta-btn">Login</a>
@@ -97,11 +98,10 @@ export default {
 <style scoped>
 
 nav#top-navbar {
-	font-family: 'Lato', sans-serif;
+	font-family: var(--navigation-font-family);
 	height: var(--navbar-height);
 	width: 100%;
 	background-color: #000000;
-	color: white;
 }
 
 /** site label */
@@ -126,7 +126,6 @@ nav label.logo .mobile-logo {
 /** desktop navigation */
 nav ul.main-nav {
 	float: right;
-	margin-right: 1.8em;
 }
 
 nav  li {
@@ -169,23 +168,23 @@ label.checkbtn {
 /** Cta buttons - the login and signup on the navbar */
 nav ul.cta-nav {
 	float: right;
+	margin-right: 1.8em;
 }
 
 nav ul.cta-nav li a {
 	text-decoration: none;
 	font-size: 1.2rem;
 	font-weight: 500;
-	color: white;
+	color: black;
 }
 
 .nav-cta-btn {
 	padding: 10px;
-	border: 1px solid var(--accent-color-2);
+	background: var(--accent-color-1);
 }
 
 .nav-cta-btn:hover {
-	background: linear-gradient(90deg, var(--accent-color-1) 0%, #3F5EFB 100%);
-	color: white;
+	background: var(--accent-color-2);
 }
 
 /** the icon box  on the mobile menu*/
@@ -211,6 +210,11 @@ nav ul.main-nav li.nav-cta-login-link {
 
 	nav label.logo {
 		margin-left: 1.2em;
+	}
+
+	nav ul.cta-nav {
+		float: right;
+		margin-right: 0;
 	}
 
 	/** The box having the icons in it */
@@ -298,6 +302,12 @@ nav ul.main-nav li.nav-cta-login-link {
 
 	nav ul.main-nav li.nav-cta-login-link {
 		display: block;
+	}
+
+	nav ul.main-nav li.nav-cta-login-link a {
+		color: black;
+		padding: 0.6em;
+		font-size: 1.3em;
 	}
 
 	nav ul.main-nav {

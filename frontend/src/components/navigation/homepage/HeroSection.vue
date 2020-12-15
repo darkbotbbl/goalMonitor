@@ -4,9 +4,10 @@
             <h1 class="hero-section-message">{{ heroMessage }}</h1>
             <p class="hero-section-subtext">{{ heroSubtext }}</p>
 
-            <a href="#" class="cta-btn-hero">Get Started Now
-                <span class=""><font-awesome-icon icon="sign-in-alt"></font-awesome-icon></span>
+            <a href="#" class="">
+                <button class="cta-btn-hero">Get Started Now <font-awesome-icon icon="sign-in-alt"></font-awesome-icon></button>
             </a>
+            <div style="padding-bottom: 5em"></div> <!-- This is a spacer -->
         </b-container>
     </section>
 </template>
@@ -28,7 +29,6 @@ export default {
         heroSubtext() {
             return this.hero_subtext
         }
-        // TODO - continue from here, add this as tagline on the hero section
     }
 }
 </script>
@@ -37,32 +37,44 @@ export default {
 <style scoped>
 #hero-section {
     text-align: center;
-    min-height: 500px;
+    min-height: fit-content;
     background-color: whitesmoke;
 }
 
 .hero-section-message {
-    font-size: 3.2rem;
-    padding-top: 0.8em;
-    line-height: 1.2em;
-    font-weight: 700;
-    font-family: 'Open Sans', sans-serif;
+    padding: 0;
+    margin: 0;
+    font-size: 3.5rem;
+    font-weight: bold;
+    font-family: var(--heading-font-family);
+    padding: 1em 0 0 0;
+    line-height: 1.1em;
+    color: blue;
 }
 
 .hero-section-subtext {
-    font-size: 1.8rem;
-    font-weight: 300;
-    margin: 1em 0 2em 0;
+    padding: 0;
+    margin: 0;
+    font-size: 1.7rem;
+    font-weight: 200;
+    font-family: var(--body-font-family);
+    padding: 1em 0 1.2em 0;
 }
 
 .cta-btn-hero {
     text-decoration: none;
     padding: 1em;
     font-size: 1.4rem;
-    font-weight: 500;
+    font-weight: 600;
     color: black;
     border: 2px solid var(--accent-color-1);
-    border-radius: 1.5em;
+    border-radius: 2em;
+    background-color: white;
+}
+
+.cta-btn-hero:hover {
+    background-color: black;
+    color: white;
 }
 
 @media screen and (max-width: 600px){
