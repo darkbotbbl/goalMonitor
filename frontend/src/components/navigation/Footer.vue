@@ -85,6 +85,10 @@ export default {
     letter-spacing: 0.1em;
 }
 
+.listing-btn:focus {
+    outline: none;
+}
+
 .listing-field::placeholder {
     font-weight: bold;
 }
@@ -98,6 +102,10 @@ export default {
     background-color: #ffaa00;
     box-shadow: inset 0 0 0.1em 0.3em rgba(0, 0, 0, 0.3);
     width: 100%;
+}
+
+.listing-btn:focus {
+    outline: none;
 }
 
 @media screen and (max-width: 767px){
