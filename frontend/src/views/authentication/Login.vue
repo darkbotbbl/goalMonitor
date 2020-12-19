@@ -1,17 +1,28 @@
 <template>
 	<div>
-		<h2>Login</h2>
-		<form @submit.prevent="login">
-			<div>
-				<label for="username">Username:</label><br>
-				<input type="text" name="username" v-model="form.username" />
+		<div class="auth-form">
+			<h1 class="heading">Login</h1>
+			<form method="POST">
+				<label for="login-email">Email: </label>
+				<input type="email" name="email" id="login-email" class="text-input" />
+
+				<label for="login-password">Password: </label>
+				<input type="password" name="password" id="login-password" class="text-input" />
+
+				<button type="submit">Login</button>
+			</form>
+
+			<div class="social-accounts-links">
+				<a href="#">Google</a>
+				<a href="#">LinkedIn</a>
 			</div>
-			<div>
-				<label for="password">Password:</label><br>
-				<input type="password" name="password" v-model="form.password" />
-			</div><br>
-			<button type="submit">Login</button>
-		</form>
+
+			<span>Not having an account?</span>
+			<router-link to="user/account/signup" tag="a">signup</router-link>
+
+			<span>Forgot your password?</span>
+			<router-link to="#" tag="a">reset password</router-link>
+		</div>
 	</div>
 </template>
 
@@ -45,5 +56,20 @@ export default {
 
 
 <style scoped>
+div.auth-form {
+	width: 280px;
+	height: 400px;
+	padding: 2em;
+	border: 1px solid black;
+	margin: 5em 0;
+	background-color: black;
+	color: white;
+}
 
-</style>
+.text-input {
+	border: none;
+	padding: 0.5em;
+	
+}
+
+</style> 

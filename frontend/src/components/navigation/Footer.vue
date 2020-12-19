@@ -1,12 +1,16 @@
+<!-- The footer is not yet complete, the layout is not best as it
+is not. When you use the bootstrap layout features, they tend to
+show above the navigation you have set for mobile, that is, they 
+show above it -->
 <template>
     <footer id="footer">
-        <div class="container-fluid">
+        <div class="container-fluid content">
             <div class="row justify-content-center">
-                <div class="col-lg-3 col-md-6 col-12 content">
+                <div class="col-lg-3 col-md-6 col-12">
                     <h4>Social Links</h4>
                     <div>
                         <ul>
-                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">Twitter <font-awesome-icon icon="twitter"></font-awesome-icon></a></li>
                             <li><a href="#">Product Hunt</a></li>
                             <li><a href="#">Email</a></li>
                             <li><a href="#">LinkedIn</a></li>
@@ -14,7 +18,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-12 content">
+                <div class="col-lg-3 col-md-6 col-12">
                     <h4>Useful Links</h4>
                     <div>
                         <ul>
@@ -26,12 +30,16 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-8 col-12 content">
+                <div class="col-lg-3 col-md-12 col-12">
                     <h4>Subscribe to our email listing</h4>
                     <div>
                         <form>
-                            <input type="text" name="email-listing-name" class="listing-field" placeholder="Enter your full name" />
-                            <input type="email" name="email-listing-email" class="listing-field" placeholder="Enter email" />
+                            <label for="email-listing-name" class="listing-label">Full Name</label>
+                            <input type="text" name="email-listing-name" class="listing-field" />
+
+                            <label for="email-listing-email" class="listing-label">Email</label>
+                            <input type="email" name="email-listing-email" class="listing-field" />
+
                             <button class="listing-btn">Subscribe</button>
                         </form>
                     </div>

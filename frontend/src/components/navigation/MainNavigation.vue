@@ -14,11 +14,11 @@
 			
 			<ul class="cta-nav">
 				<li class="nav-cta-login-link">
-					<a href="#" class="nav-cta-btn">Login</a>
+					<router-link tag="a" class="nav-cta-btn" to="/user/account/login">Login</router-link>
 				</li>
 
 				<li>
-					<a href="#" class="nav-cta-btn">Signup</a>
+					<router-link tag="a" class="nav-cta-btn" to="/user/account/signup">Signup</router-link>
 				</li>
 			</ul>
 
@@ -38,7 +38,7 @@
 					</a>
 				</li>
 				<li class="nav-cta-login-link">
-					<a href="#" class="nav-cta-btn">Login</a>
+					<router-link tag="a" class="nav-cta-btn" to="/user/account/login">Login</router-link>
 				</li>
 			</ul>
 		</nav>

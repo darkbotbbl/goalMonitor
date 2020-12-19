@@ -14,7 +14,6 @@
 import HeroSection from "../../components/navigation/homepage/HeroSection"
 import FeatureList from "../../components/navigation/homepage/FeatureList"
 
-
 export default {
 	name: "App",
 	data() {

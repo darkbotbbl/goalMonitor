@@ -1,20 +1,12 @@
 <template>
-	<!-- TODO Move all these to it's own component and import it here -->
-
 	<div>
-		<!-- Navigation -->
-		<g-main-navigation></g-main-navigation>
 		<!-- Load router view-->
 		<router-view></router-view>
-		<!-- Footer -->
-		<g-footer></g-footer>
 	</div>
 </template>
 
 
 <script>
-import MainNavigation from "./components/navigation/MainNavigation"
-import Footer from "./components/navigation/Footer"
 
 export default {
 	name: "App",
@@ -24,8 +16,7 @@ export default {
 		}
 	},
 	components: {
-		gMainNavigation: MainNavigation,
-		gFooter: Footer,
+
 	}
 }
 
