@@ -25,6 +25,7 @@ show above it -->
                             <li><a href="#">Privacy Terms</a></li>
                             <li><a href="#">Terms of Service</a></li>
                             <li><a href="#">Terms and Agreement</a></li>
+                            <li><a href="#">Cookies Policy</a></li>
                             <li><a href="#">About</a></li>
                             <li><a href="#">Products</a></li>
                         </ul>

@@ -41,7 +41,7 @@ export default {
     background-color: whitesmoke;
 }
 
-.hero-section-message {
+#hero-section .hero-section-message {
     padding: 0;
     margin: 0;
     font-size: 3.5rem;
@@ -52,7 +52,7 @@ export default {
     color: blue;
 }
 
-.hero-section-subtext {
+#hero-section .hero-section-subtext {
     padding: 0;
     margin: 0;
     font-size: 1.7rem;
@@ -61,28 +61,29 @@ export default {
     padding: 1em 0 1.2em 0;
 }
 
-.cta-btn-hero {
+#hero-section .cta-btn-hero {
     text-decoration: none;
     padding: 1em;
     font-size: 1.4rem;
-    font-weight: 600;
+    font-weight: 700;
     color: black;
     border: 2px solid var(--accent-color-1);
-    border-radius: 2em;
-    background-color: white;
+    border-radius: 0.5em;
+    background-color: var(--accent-color-1);
+    box-shadow: 0.3em 0.3em 0.3em rgba(0, 0, 0, 0.4),
+                inset 0.2em 0.2em 0.2em rgba(0, 0, 0, 0.4);
 }
 
-.cta-btn-hero:hover {
-    background-color: black;
-    color: white;
+#hero-section .cta-btn-hero:hover {
+    background-color: var(--accent-color-2);
 }
 
 @media screen and (max-width: 600px){
-    .hero-section-message {
+    #hero-section .hero-section-message {
         font-size: 2.5rem;
     }
 
-    .hero-section-subtext {
+    #hero-section .hero-section-subtext {
         font-size: 1.3rem;
     }
 }
