@@ -58,6 +58,7 @@ export default {
 	--mobile-nav-width: 100%;
 	--accent-color-1: #ffaa00;
 	--accent-color-2: #e89b00;
+	--dark-shade-1: #000000b9;
 	--feature-box-height: 200px;
 	--navigation-font-family: "Lato", sans-serif;
 	--body-font-family: "Open Sans";
