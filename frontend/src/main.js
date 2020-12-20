@@ -15,6 +15,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
+import '../public/static/css/global.css'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faBars, faMoneyBillWave, faBoxes, faUsersCog, faQuestionCircle, faChartLine, faTimes, faSignInAlt} from '@fortawesome/free-solid-svg-icons'

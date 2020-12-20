@@ -25,10 +25,10 @@
 				<a href="#">LinkedIn</a>
 			</div>
 
-			<hr />
+			<hr class="g-hr-2"/>
 			<div class="other-links text-center">
 				<span>Not having an account?</span> <br>
-				<router-link class="other-links-a" to="user/account/signup" tag="a">signup</router-link> <br>
+				<router-link class="other-links-a" to="/user/account/signup" tag="a">signup</router-link> <br>
 
 				<span>Forgot your password?</span> <br>
 				<router-link class="other-links-a" to="#" tag="a">reset password</router-link> <br>
@@ -65,97 +65,6 @@ export default {
 }
 </script>
 
-
 <style scoped>
-div.auth-form {
-	--width-of-form: 400px;
-}
 
-@media screen and (max-width: 399px){
-	div.auth-form {
-		--width-of-form: 92vw;
-	}
-}
-
-div.auth-form {
-	background-color: var(--dark-shade-1);
-	color: whitesmoke;
-	width: var(--width-of-form);
-	padding: 1em;
-	margin: 5em 0;
-	border-radius: 0.5em;
-	position: relative;
-	left: 50%;
-	transform: translate(-50%, 0);
-	font-family: var(--navigation-font-family);
-}
-
-.auth-form h1.heading {
-	text-align: center;
-	color: white;
-	text-transform: uppercase;
-	font-weight: 800;
-}
-
-.g-hr {
-	border: 1px solid white;
-}
-
-.auth-form form label {
-	font-size: 1.2rem;
-	font-weight: bold;
-	color: var(--accent-color-1);
-}
-
-.auth-form .text-input {
-	padding: 0.5em;
-	font-size: 1.1rem;
-	width: calc(var(--width-of-form) - 2em);
-	letter-spacing: 2px;
-}
-
-.auth-form .text-input:focus {
-	border: none;
-}
-
-button.form-btn {
-	border: none;
-	padding: 0.4em 0.8em;
-	margin: 0.4em 0;
-	font-size: 1.4rem;
-	font-weight: 800;
-	width: calc(var(--width-of-form) - 1.60em);
-	background-color: green;
-	color: white;
-}
-
-.auth-form .social-accounts-links {
-	font-size: 1.2rem;
-	margin: 0.3em;
-}
-
-.auth-form .social-accounts-links a {
-	text-decoration: none;
-	margin: 0 0.3em;
-	font-size: 1.2rem;
-	font-weight: bold;
-}
-
-.social-accounts-links a:hover {
-	color: hotpink;
-}
-
-.other-links {
-	font-size: 1.1rem;
-	text-transform: lowercase;
-}
-
-.other-links-a {
-	font-weight: bold;
-}
-
-.other-links-a:hover {
-	text-decoration: none;
-	color: hotpink;
-}
 </style> 
