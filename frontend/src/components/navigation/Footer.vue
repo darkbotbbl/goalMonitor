@@ -30,7 +30,7 @@ show above it -->
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-12 col-12">
+                <div class="col-lg-3 col-md-12 col-12 order-1 order-md-1 order-lg-3">
                     <h4>Subscribe to our email listing</h4>
                     <div>
                         <form>

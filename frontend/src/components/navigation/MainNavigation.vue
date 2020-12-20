@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<nav id="top-navbar">
+		<nav id="top-navbar" class="">
 			<input type="checkbox" id="check" v-model="checkboxValue"/>
 
 			<label class="logo">
@@ -95,7 +95,7 @@ export default {
 </script>
 
 
-<style scoped>
+<style>
 
 nav#top-navbar {
 	font-family: var(--navigation-font-family);
@@ -198,11 +198,12 @@ nav ul.main-nav li.nav-cta-login-link {
 
 
 /**  Mobile nav */
+
+
 @media screen and (max-width: 891px) {
 	nav ul.main-nav li a:hover {
 		border-bottom: none;
 	}
-
 
 	label.checkbtn {
 		display: block;
@@ -236,8 +237,9 @@ nav ul.main-nav li.nav-cta-login-link {
 	/** Mobile Navigation */
 	nav ul.main-nav {
 		position: fixed;
+		z-index: 5000;
 		height: 100vh;
-		width: 362px;
+		width: 100%;
 		background-color: #08090A;
 		top: calc(var(--navbar-height));
 		left: -100%;
@@ -320,5 +322,4 @@ nav ul.main-nav li.nav-cta-login-link {
 		cursor: default;
 	}
 }
-
 </style>

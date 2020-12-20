@@ -62,8 +62,10 @@ div.auth-form {
 	padding: 2em;
 	border: 1px solid black;
 	margin: 5em 0;
-	background-color: black;
+	background-color: blue;
 	color: white;
+	position: relative;
+	align-self: center;
 }
 
 .text-input {
